@@ -1,6 +1,6 @@
 %define module	POE-Component-IRC
 %define name	perl-%{module}
-%define version	5.29
+%define version	5.32
 %define release	%mkrel 1
 
 Name:		%{name}
@@ -10,7 +10,7 @@ Summary:	A fully event-driven IRC client module
 License:	GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/POE/%{module}-%{version}.tar.bz2
+Source:		http://www.cpan.org/modules/by-module/POE/%{module}-%{version}.tar.gz
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
