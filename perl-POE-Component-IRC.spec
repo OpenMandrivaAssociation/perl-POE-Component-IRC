@@ -19,7 +19,6 @@ BuildRequires:  perl(POE::Component::Client::DNS)
 BuildRequires:  perl(POE::Component::Client::Ident)
 BuildRequires:  perl(Date::Format)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 POE::Component::IRC is a POE (Perl Object Environment) component
