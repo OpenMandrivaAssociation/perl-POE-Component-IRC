@@ -1,6 +1,6 @@
 %define module	POE-Component-IRC
 %define name	perl-%{module}
-%define version	5.74
+%define version	5.76
 %define release	%mkrel 1
 
 Name:		%{name}
