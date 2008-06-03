@@ -1,6 +1,6 @@
 %define module	POE-Component-IRC
 %define name	perl-%{module}
-%define version	5.76
+%define version	5.78
 %define release	%mkrel 1
 
 Name:		%{name}
@@ -17,6 +17,7 @@ BuildRequires:	perl-devel
 BuildRequires:  perl(POE::Filter::IRCD)
 BuildRequires:  perl(POE::Component::Client::DNS)
 BuildRequires:  perl(POE::Component::Client::Ident)
+BuildRequires:  perl(POE::Component::Pluggable)
 BuildRequires:  perl(Date::Format)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
