@@ -1,16 +1,16 @@
-%define module	POE-Component-IRC
-%define name	perl-%{module}
-%define version	6.08
-%define release	%mkrel 1
+%define upstream_name	 POE-Component-IRC
+%define upstream_version 6.08
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	A fully event-driven IRC client module
 License:	GPL
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/POE/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
@@ -20,7 +20,7 @@ BuildRequires:  perl(POE::Component::Client::Ident)
 BuildRequires:  perl(POE::Component::Pluggable)
 BuildRequires:  perl(Date::Format)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 POE::Component::IRC is a POE (Perl Object Environment) component
@@ -30,7 +30,7 @@ first sentence was a bit too much, go read the POE documentation over
 and over until it makes some sense.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 chmod 644 README Changes
 find lib -name \*.pm | xargs chmod 644
 
@@ -53,5 +53,3 @@ rm -rf %{buildroot}
 %doc README Changes examples
 %{perl_vendorlib}/POE
 %_mandir/*/*
-
-
