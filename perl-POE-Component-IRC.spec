@@ -1,5 +1,5 @@
 %define upstream_name	 POE-Component-IRC
-%define upstream_version 6.20
+%define upstream_version 6.22
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
