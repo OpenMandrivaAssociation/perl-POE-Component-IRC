@@ -1,5 +1,5 @@
 %define upstream_name	 POE-Component-IRC
-%define upstream_version 6.39
+%define upstream_version 6.52
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -14,11 +14,13 @@ Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_v
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+BuildRequires:  perl(Date::Format)
+BuildRequires:  perl(Object::Pluggable)
 BuildRequires:  perl(POE::Filter::IRCD)
 BuildRequires:  perl(POE::Component::Client::DNS)
 BuildRequires:  perl(POE::Component::Client::Ident)
 BuildRequires:  perl(POE::Component::Pluggable)
-BuildRequires:  perl(Date::Format)
+
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
@@ -39,7 +41,7 @@ find lib -name \*.pm | xargs chmod 644
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
