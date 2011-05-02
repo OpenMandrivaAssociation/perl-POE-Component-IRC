@@ -1,5 +1,5 @@
 %define upstream_name	 POE-Component-IRC
-%define upstream_version 6.60
+%define upstream_version 6.61
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -10,17 +10,13 @@ License:	GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
-
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
 BuildRequires:  perl(Date::Format)
+BuildRequires:  perl(IRC::Utils)
 BuildRequires:  perl(Object::Pluggable)
 BuildRequires:  perl(POE::Filter::IRCD)
 BuildRequires:  perl(POE::Component::Client::DNS)
 BuildRequires:  perl(POE::Component::Client::Ident)
 BuildRequires:  perl(POE::Component::Pluggable)
-
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
