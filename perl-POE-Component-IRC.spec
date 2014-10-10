@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 
 Summary:	A fully event-driven IRC client module
 License:	GPL
